@@ -32,8 +32,13 @@ public class Main {
 			if(content instanceof State) {
 				State state = (State) content;
 				System.out.println(state.getName());
-				//print transactions
 				
+				if(state.getName()=="") {
+					state.setName("Ujnev"+szam);
+					System.out.println("javasolt nev : Ujnev"+szam);
+					szam++;
+				}
+				//print transactions
 				for(Transition tr : state.getOutgoingTransitions()) {
 					State outGoing =(State) tr.getTarget();
 					System.out.println(state.getName()+"->"+outGoing.getName());
@@ -44,10 +49,7 @@ public class Main {
 				if(state.getOutgoingTransitions().size()==0) {
 					System.out.println("veszelyes allapot:  " + state.getName());
 				}
-				if(state.getName()=="") {
-					System.out.println("javasolt nev: Ujnev"+szam);
-					szam++;
-				}
+				
 				
 			}
 		}

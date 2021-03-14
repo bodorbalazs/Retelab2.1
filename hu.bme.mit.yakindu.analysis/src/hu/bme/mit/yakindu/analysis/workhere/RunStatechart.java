@@ -23,27 +23,27 @@ public class RunStatechart {
 		while(end==false) {
 			Scanner in = new Scanner(System.in);
 			String string = in.nextLine();
-			if (string=="black") {
+			if (string.equals("black")) {
 			s.raiseBlack();
 			s.runCycle();
 			print(s);
 			}
-			if (string=="white") {
+			if (string.equals("white")) {
 				s.raiseWhite();
 				s.runCycle();
 				print(s);
 				}
-			if(string=="start") {
+			if(string.equals("start")) {
 				s.raiseStart();
 				s.runCycle();
 				print(s);
 			}
-			if(string=="exit") {
+			if(string.equals("exit")) {
 				System.exit(0);
 				end=true;
 				in.close();
 			}
-			System.out.print("semmi");
+			//		System.out.print("semmi");
 		}
 		
 //		s.runCycle();
